@@ -5,19 +5,28 @@ var Bubble = (function () {
 }());
 var Fish = (function () {
     function Fish() {
+        this.color = Math.random() * 360;
+        this.div = document.createElement("Fish");
+        document.body.appendChild(this.div);
+        var x = Math.random() * window.innerWidth;
+        var y = Math.random() * window.innerHeight;
+        this.move(x, y);
+        this.div.style.webkitFilter = "hue-rotate(" + this.color + "deg)";
+        this.div.style.filter = "hue-rotate(" + this.color + "deg)";
     }
+    Fish.prototype.move = function (x, y) {
+        this.x = x;
+        this.y = y;
+        this.div.style.left = this.x + "px";
+        this.div.style.top = this.y + "px";
+    };
     return Fish;
 }());
 var Game = (function () {
     function Game() {
-        var f = document.createElement("fish");
-        document.body.appendChild(f);
-        var fishx = Math.random() * window.innerWidth;
-        var fishy = Math.random() * window.innerHeight;
-        f.style.left = fishx + "px";
-        f.style.top = fishy + "px";
-        f.style.webkitFilter = "hue-rotate(45deg)";
-        f.style.filter = "hue-rotate(45deg)";
+        for (var i = 0; i < 100; i++) {
+            var fish = new Fish();
+        }
         var b = document.createElement("bubble");
         document.body.appendChild(b);
         var startx = Math.random() * window.innerWidth;
