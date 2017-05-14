@@ -1,5 +1,9 @@
 var Bubble = (function () {
     function Bubble() {
+        var b = document.createElement("bubble");
+        document.body.appendChild(b);
+        var startx = Math.random() * window.innerWidth;
+        b.style.left = startx + "px";
     }
     return Bubble;
 }());
@@ -27,10 +31,9 @@ var Game = (function () {
         for (var i = 0; i < 100; i++) {
             var fish = new Fish();
         }
-        var b = document.createElement("bubble");
-        document.body.appendChild(b);
-        var startx = Math.random() * window.innerWidth;
-        b.style.left = startx + "px";
+        for (var i = 0; i < 10; i++) {
+            var bubble = new Bubble();
+        }
     }
     return Game;
 }());

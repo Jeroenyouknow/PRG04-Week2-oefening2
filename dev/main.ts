@@ -5,17 +5,16 @@ class Game {
     
     constructor() {
 
+        //Fish
         for(var i = 0; i <100; i++){
             let fish = new Fish();
         }
        
 
-        // bubble
-        let b = document.createElement("bubble");
-        document.body.appendChild(b);
-                        
-        let startx:number = Math.random() * window.innerWidth;
-        b.style.left = startx + "px";
+        //Bubble
+       for(var i = 0; i <10; i++){
+            let bubble = new Bubble();
+        }
     }
 } 
 
