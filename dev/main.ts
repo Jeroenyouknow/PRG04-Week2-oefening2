@@ -4,17 +4,12 @@
 class Game {
     
     constructor() {
-
-        //Fish
-        for(var i = 0; i <100; i++){
-            let fish = new Fish();
-        }
-       
-
-        //Bubble
-       for(var i = 0; i <10; i++){
-            let bubble = new Bubble();
-        }
+        setInterval(this.createElements, 100);
+    }
+    
+    createElements() {
+         let fish : Fish = new Fish();
+         let bubble : Bubble = new Bubble();
     }
 } 
 

@@ -28,13 +28,12 @@ var Fish = (function () {
 }());
 var Game = (function () {
     function Game() {
-        for (var i = 0; i < 100; i++) {
-            var fish = new Fish();
-        }
-        for (var i = 0; i < 10; i++) {
-            var bubble = new Bubble();
-        }
+        setInterval(this.createElements, 100);
     }
+    Game.prototype.createElements = function () {
+        var fish = new Fish();
+        var bubble = new Bubble();
+    };
     return Game;
 }());
 window.addEventListener("load", function () {

@@ -13,7 +13,7 @@ class Fish {
         this.div = document.createElement("Fish");
         document.body.appendChild(this.div);
 
-        var x = Math.random() * window.innerWidth;
+        var x = Math.random() * window.innerWidth ;
         var y = Math.random() * window.innerHeight;
         
         this.move(x,y);
